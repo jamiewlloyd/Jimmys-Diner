@@ -1,19 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+   <meta charset="utf-8">
+   <meta name="description" content="Scrimba food ordering project">
+   <meta name="author" content="Jamie">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Smythe&display=swap"
+      rel="stylesheet">
    <link rel="stylesheet" href="index.css">
+   <title>Jimmy's Diner</title>
 </head>
 
 <body>
-   <div id="container">
+   <div id="main-container">
       <header>
          <img src="images/burgerbanner.png" alt="One of Jimmy's famous burgers." class="banner-img">
          <h1>Jimmy's Diner</h1>
          <p class="header-tag">The best burgers and pizzas in town</p>
       </header>
+      <main id="app-container">
+         <section id="order-item">
+            <img src="images/pizza.png" alt="A slice of pizza" id="food-icon">
+            <div class="food-information">
+               <h2 id="food-item">Pizza</h2>
+               <p id="ingredients">pepperoni, mushroom, mozzarella</p>
+               <p id="Price">£14</p>
+            </div>
+            <div id="add-btn" role="button">+</div>
+         </section>
+         <section id="order-item">
+            <img src="images/burger.png" alt="A slice of pizza" id="food-icon">
+            <div class="food-information">
+               <h2 id="food-item">Beer</h2>
+               <p id="ingredients">beef, cheese, lettuce</p>
+               <p id="Price">£17</p>
+            </div>
+            <div id="add-btn" role="button">+</div>
+         </section>
+         <section id="order-item">
+            <img src="images/beer.png" alt="A slice of pizza" id="food-icon">
+            <div class="food-information">
+               <h2 id="food-item">Pizza</h2>
+               <p id="ingredients">grain, hops, yeast, water</p>
+               <p id="Price">£7</p>
+            </div>
+            <div id="add-btn" role="button">+</div>
+         </section>
+         <article id="basket">
+
+         </article>
+      </main>
    </div>
    <script src="index.js"></script>
 </body>

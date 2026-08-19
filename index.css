@@ -5,14 +5,23 @@ body {
    font-style: normal;
 }
 
-#container {
+h1,
+h2,
+h3,
+p {
+   margin: 0;
+}
+
+#main-container {
    width: 600px;
+   height: 1161px;
    margin: 0 auto;
 }
 
 header {
+   width: 100%;
+   height: 167px;
    color: white;
-   margin-bottom: 45px;
 }
 
 .banner-img {
@@ -32,3 +41,70 @@ h1 {
    margin: 0;
    padding: 5px 0 0 46px;
 }
+
+#app-container {
+   width: 508px;
+   margin: 0 auto;
+}
+
+#order-item {
+   width: 508px;
+   height: 140px;
+   margin-top: 45px;
+   display: grid;
+   grid-template-columns: 89px 1fr 50px;
+   grid-template-rows: 1fr 45px;
+   border-bottom: 1px solid #D2D2D2;
+}
+
+#food-icon {
+   width: 70px;
+   height: 89px;
+   object-fit: contain;
+}
+
+.food-information {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   height: 89px;
+}
+
+h2 {
+   font-size: 28px;
+   font-weight: 400;
+   line-height: 25px;
+}
+
+#food-item {
+   padding-top: 7px;
+}
+
+#ingredients {
+   font-size: 16px;
+   color: #8B8B8B;
+}
+
+#price {
+   font-size: 20px;
+}
+
+#add-btn {
+   border: 1px solid #DEDEDE;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   text-align: center;
+   margin: 18px 0 0 -3px;
+   font-family: "Inter", sans-serif;
+   font-weight: 200;
+   font-size: 32px;
+   line-height: 45px;
+}
+
+/* #basket {
+   width: 508px;
+   height: 319px;
+   margin-top: 45px;
+   background-color: orange;
+} */
