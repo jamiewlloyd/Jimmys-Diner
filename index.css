@@ -1,0 +1,34 @@
+body {
+   margin: 0;
+   font-family: "Smythe", system-ui;
+   font-weight: 400;
+   font-style: normal;
+}
+
+#container {
+   width: 600px;
+   margin: 0 auto;
+}
+
+header {
+   color: white;
+   margin-bottom: 45px;
+}
+
+.banner-img {
+   position: absolute;
+   z-index: -1;
+}
+
+h1 {
+   font-size: 39px;
+   font-weight: 400;
+   margin: 0;
+   padding: 40px 0 0 46px;
+}
+
+.header-tag {
+   font-size: 22px;
+   margin: 0;
+   padding: 5px 0 0 46px;
+}
