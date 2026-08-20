@@ -47,7 +47,7 @@ h1 {
    margin: 0 auto;
 }
 
-#order-item {
+.order-item {
    width: 508px;
    height: 140px;
    margin-top: 45px;
@@ -57,7 +57,7 @@ h1 {
    border-bottom: 1px solid #D2D2D2;
 }
 
-#food-icon {
+.food-icon {
    width: 70px;
    height: 89px;
    object-fit: contain;
@@ -76,20 +76,20 @@ h2 {
    line-height: 25px;
 }
 
-#food-item {
+.food-item {
    padding-top: 7px;
 }
 
-#ingredients {
+.ingredients {
    font-size: 16px;
    color: #8B8B8B;
 }
 
-#price {
+.price {
    font-size: 20px;
 }
 
-#add-btn {
+.add-btn {
    border: 1px solid #DEDEDE;
    width: 50px;
    height: 50px;
@@ -112,9 +112,75 @@ h2 {
    user-select: none;
 }
 
-/* #basket {
+#basket {
    width: 508px;
    height: 319px;
-   margin-top: 45px;
-   background-color: orange;
-} */
+   margin: 45px 0;
+}
+
+.basket-heading {
+   text-align: center;
+}
+
+#basket-contents {
+   height: 130px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   border-bottom: 2px solid #393333;
+   padding-bottom: 20px;
+}
+
+.basket-item {
+   width: 508px;
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   margin-bottom: 10px;
+}
+
+.basket-item .price {
+   margin-left: auto;
+}
+
+.remove-btn {
+   font-size: 12px;
+   cursor: pointer;
+   font-family: Verdana, sans-serif;
+   padding-top: 2px;
+   color: #BBBBBB;
+}
+
+#total {
+   width: 508px;
+   display: flex;
+   align-items: center;
+   justify-items: space-between;
+   margin-top: 20px;
+}
+
+#total .price {
+   margin-left: auto;
+}
+
+#complete-order {
+   margin-top: 55px;
+}
+
+.confirm-btn {
+   background-color: #16DB99;
+   border-radius: 3px;
+   font-family: Verdana, sans-serif;
+   font-size: 16px;
+   font-weight: bold;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.complete-btn {
+   width: 508px;
+   height: 60px;
+   cursor: pointer;
+}

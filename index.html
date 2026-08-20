@@ -23,35 +23,59 @@
          <p class="header-tag">The best burgers and pizzas in town</p>
       </header>
       <main id="app-container">
-         <section id="order-item">
-            <img src="images/pizza.png" alt="A slice of pizza" id="food-icon">
-            <div class="food-information">
-               <h2 id="food-item">Pizza</h2>
-               <p id="ingredients">pepperoni, mushroom, mozzarella</p>
-               <p id="Price">£14</p>
-            </div>
-            <div id="add-btn" role="button"><span class="unselectable">+</span></div>
-         </section>
-         <section id="order-item">
-            <img src="images/burger.png" alt="A slice of pizza" id="food-icon">
-            <div class="food-information">
-               <h2 id="food-item">Beer</h2>
-               <p id="ingredients">beef, cheese, lettuce</p>
-               <p id="Price">£17</p>
-            </div>
-            <div id="add-btn" role="button"><span class="unselectable">+</span></div>
-         </section>
-         <section id="order-item">
-            <img src="images/beer.png" alt="A slice of pizza" id="food-icon">
-            <div class="food-information">
-               <h2 id="food-item">Pizza</h2>
-               <p id="ingredients">grain, hops, yeast, water</p>
-               <p id="Price">£7</p>
-            </div>
-            <div id="add-btn" role="button"><span class="unselectable">+</span></div>
-         </section>
-         <article id="basket">
 
+         <section class="order-item">
+            <img src="images/pizza.png" alt="A slice of pizza" class="food-icon">
+            <div class="food-information">
+               <h2 class="food-item">Pizza</h2>
+               <p class="ingredients">pepperoni, mushroom, mozzarella</p>
+               <p class="Price">£14</p>
+            </div>
+            <div class="add-btn" role="button"><span class="unselectable">+</span></div>
+         </section>
+
+         <section class="order-item">
+            <img src="images/pizza.png" alt="A slice of pizza" class="food-icon">
+            <div class="food-information">
+               <h2 class="food-item">Pizza</h2>
+               <p class="ingredients">pepperoni, mushroom, mozzarella</p>
+               <p class="Price">£14</p>
+            </div>
+            <div class="add-btn" role="button"><span class="unselectable">+</span></div>
+         </section>
+
+         <section class="order-item">
+            <img src="images/pizza.png" alt="A slice of pizza" class="food-icon">
+            <div class="food-information">
+               <h2 class="food-item">Pizza</h2>
+               <p class="ingredients">pepperoni, mushroom, mozzarella</p>
+               <p class="Price">£14</p>
+            </div>
+            <div class="add-btn" role="button"><span class="unselectable">+</span></div>
+         </section>
+
+         <article id="basket">
+            <h2 class="basket-heading">Your order</h2>
+            <section id="basket-contents">
+               <div class="basket-item">
+                  <h2>Pizza</h2>
+                  <div class="remove-btn" role="button">remove</div>
+                  <p class="price">£14</p>
+               </div>
+
+               <div class="basket-item">
+                  <h2>Burger</h2>
+                  <div class="remove-btn" role="button">remove</div>
+                  <p class="price">£14</p>
+               </div>
+            </section>
+            <section id="total">
+               <h2>Total price:</h2>
+               <p class="price">£28</p>
+            </section>
+            <section id="complete-order">
+               <div class="confirm-btn complete-btn" role="button">Complete order</div>
+            </section>
          </article>
       </main>
    </div>
