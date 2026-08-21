@@ -3,21 +3,21 @@ const menuArray = [
       name: "Pizza",
       ingredients: ["pepperoni", "mushroom", "mozzarella"],
       price: 14,
-      emoji: "🍕",
+      image: "pizza.png",
       id: 0
    },
    {
       name: "Hamburger",
       ingredients: ["beef", "cheese", "lettuce"],
       price: 12,
-      emoji: "🍔",
+      image: "burger.png",
       id: 1
    },
    {
       name: "Beer",
       ingredients: ["grain, hops, yeast, water"],
       price: 12,
-      emoji: "🍺",
+      image: "beer.png",
       id: 2
    }
 ]
