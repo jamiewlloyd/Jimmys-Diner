@@ -77,6 +77,16 @@
                <div class="confirm-btn complete-btn" role="button">Complete order</div>
             </section>
          </article>
+         <form id="modal" class="modal hidden">
+            <h2 class="modal-heading">Enter card details</h2>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="tel" id="card-number" name="card-number" inputmode="numeric" pattern="[0-9\s]{13,19}"
+               placeholder="Enter card number" required>
+            <input type="tel" id="cvv" name="cvv" inputmode="numeric" pattern="[0-9\s]{3}" placeholder="Enter CVV"
+               required>
+            <button class="confirm-btn pay-btn" role="button">Pay</button>
+
+         </form>
       </main>
    </div>
    <script src="index.js"></script>
