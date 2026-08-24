@@ -2,6 +2,8 @@ import { menuArray } from '/data.js';
 
 const appContainer = document.getElementById("app-container");
 const basket = document.getElementById('basket');
+const basketTotal = document.getElementById('basket-total');
+let totalPrice = Number(basketTotal.innerText);
 
 menuArray.forEach(object => {
    appContainer.insertBefore(renderMenuItem(object), basket)
@@ -54,22 +56,25 @@ function renderMenuItem(foodObj) {
 }
 
 document.addEventListener("click", function (e) {
-   console.log(e.target)
+
    if (e.target.classList.contains('add-btn')) {
       const addedItem = e.target.parentElement;
-      const addedItemName = addedItem.childNodes[1].childNodes[0].innerText
-      const addedItemPrice = addedItem.childNodes[1].childNodes[2].innerText
+      const addedItemName = addedItem.childNodes[1].childNodes[0].innerText;
+      const addedItemPrice = addedItem.childNodes[1].childNodes[2].innerText;
       renderBasketItem(addedItemName, addedItemPrice);
       if (basket.classList.contains('hidden')) {
-         basket.classList.remove('hidden')
-      }
-   };
+         basket.classList.remove('hidden');
+      };
+   } else if (e.target.classList.contains('remove-btn')) {
+      const removeItemParent = e.target.parentElement;
+      const removeItemPrice = Number(e.target.nextElementSibling.innerText.replace(/[^0-9\.]+/g, ""));
+      removeBasketItem(removeItemParent, removeItemPrice);
+   }
 });
 
 function renderBasketItem(name, price) {
    const basketContents = document.getElementById('basket-contents');
    const currentItemArr = Array.from(basketContents.children).map(x => x.id);
-   console.log(currentItemArr);
 
    if (!currentItemArr.includes(name)) {
 
@@ -92,14 +97,18 @@ function renderBasketItem(name, price) {
       basketItem.appendChild(itemHeading);
       basketItem.appendChild(removeBtn);
       basketItem.appendChild(itemPrice);
-
       basketContents.appendChild(basketItem);
 
-      const basketTotal = document.getElementById('basket-total');
-      let totalPrice = Number(basketTotal.innerText);
-      console.log(totalPrice);
       totalPrice += Number(price.replace(/[^0-9\.]+/g, ""))
       basketTotal.innerHTML = totalPrice;
    }
 }
 
+function removeBasketItem(parent, price) {
+   parent.remove()
+   totalPrice -= price
+   basketTotal.innerHTML = totalPrice;
+   if ((totalPrice === 0) && (!basket.classList.contains('hidden'))) {
+      basket.classList.add('hidden');
+   }
+}
