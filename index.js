@@ -11,13 +11,17 @@ function renderMenuItem(foodObj) {
 
    const orderItem = document.createElement("section");
    orderItem.classList.add("order-item");
+   orderItem.setAttribute('id', `order-item-${foodObj.name}`);
+
    // Image
    const orderItemImg = document.createElement("img");
    orderItemImg.classList.add('food-icon');
    orderItemImg.setAttribute('src', `/images/${foodObj.image}`);
+
    // Information
    const foodInfo = document.createElement("div");
    foodInfo.classList.add("food-information");
+
    // Information child nodes
    const foodItem = document.createElement("h2");
    foodItem.classList.add("food-item");
@@ -40,10 +44,7 @@ function renderMenuItem(foodObj) {
    const addBtn = document.createElement("div");
    addBtn.classList.add("add-btn");
    addBtn.setAttribute('role', 'button');
-   const unselectable = document.createElement("span");
-   unselectable.classList.add("unselectable");
-   unselectable.innerText = "+";
-   addBtn.appendChild(unselectable);
+   addBtn.innerText = "+";
 
    // Appending elements to main section
    orderItem.appendChild(orderItemImg);
@@ -52,4 +53,39 @@ function renderMenuItem(foodObj) {
    return orderItem;
 }
 
+document.addEventListener("click", function (e) {
+   console.log(e.target)
+   if (e.target.classList.contains('add-btn')) {
+      const addedItem = e.target.parentElement;
+      const addedItemName = addedItem.childNodes[1].childNodes[0].innerText
+      const addedItemPrice = addedItem.childNodes[1].childNodes[2].innerText
+      renderBasketItem(addedItemName, addedItemPrice);
+   };
+});
+
+function renderBasketItem(name, price) {
+   const basketContents = document.getElementById('basket-contents');
+
+   const basketItem = document.createElement("div");
+   basketItem.classList.add('basket-item');
+   basketItem.setAttribute('id', `basket-item-${name}`);
+
+   const itemHeading = document.createElement("h2");
+   itemHeading.innerText = name;
+
+   const removeBtn = document.createElement("div");
+   removeBtn.classList.add('remove-btn');
+   removeBtn.setAttribute('role', 'button');
+   removeBtn.innerText = 'remove';
+
+   const itemPrice = document.createElement("p");
+   itemPrice.classList.add('price');
+   itemPrice.innerText = price;
+
+   basketItem.appendChild(itemHeading);
+   basketItem.appendChild(removeBtn);
+   basketItem.appendChild(itemPrice);
+
+   basketContents.appendChild(basketItem);
+}
 
