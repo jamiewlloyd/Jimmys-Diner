@@ -65,27 +65,32 @@ document.addEventListener("click", function (e) {
 
 function renderBasketItem(name, price) {
    const basketContents = document.getElementById('basket-contents');
+   const currentItemArr = Array.from(basketContents.children).map(x => x.id);
+   console.log(currentItemArr);
 
-   const basketItem = document.createElement("div");
-   basketItem.classList.add('basket-item');
-   basketItem.setAttribute('id', `basket-item-${name}`);
+   if (!currentItemArr.includes(name)) {
 
-   const itemHeading = document.createElement("h2");
-   itemHeading.innerText = name;
+      const basketItem = document.createElement("div");
+      basketItem.classList.add('basket-item');
+      basketItem.setAttribute('id', `${name}`);
 
-   const removeBtn = document.createElement("div");
-   removeBtn.classList.add('remove-btn');
-   removeBtn.setAttribute('role', 'button');
-   removeBtn.innerText = 'remove';
+      const itemHeading = document.createElement("h2");
+      itemHeading.innerText = name;
 
-   const itemPrice = document.createElement("p");
-   itemPrice.classList.add('price');
-   itemPrice.innerText = price;
+      const removeBtn = document.createElement("div");
+      removeBtn.classList.add('remove-btn');
+      removeBtn.setAttribute('role', 'button');
+      removeBtn.innerText = 'remove';
 
-   basketItem.appendChild(itemHeading);
-   basketItem.appendChild(removeBtn);
-   basketItem.appendChild(itemPrice);
+      const itemPrice = document.createElement("p");
+      itemPrice.classList.add('price');
+      itemPrice.innerText = price;
 
-   basketContents.appendChild(basketItem);
+      basketItem.appendChild(itemHeading);
+      basketItem.appendChild(removeBtn);
+      basketItem.appendChild(itemPrice);
+
+      basketContents.appendChild(basketItem);
+   }
 }
 
