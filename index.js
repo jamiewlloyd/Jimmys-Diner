@@ -60,6 +60,9 @@ document.addEventListener("click", function (e) {
       const addedItemName = addedItem.childNodes[1].childNodes[0].innerText
       const addedItemPrice = addedItem.childNodes[1].childNodes[2].innerText
       renderBasketItem(addedItemName, addedItemPrice);
+      if (basket.classList.contains('hidden')) {
+         basket.classList.remove('hidden')
+      }
    };
 });
 
@@ -91,6 +94,12 @@ function renderBasketItem(name, price) {
       basketItem.appendChild(itemPrice);
 
       basketContents.appendChild(basketItem);
+
+      const basketTotal = document.getElementById('basket-total');
+      let totalPrice = Number(basketTotal.innerText);
+      console.log(totalPrice);
+      totalPrice += Number(price.replace(/[^0-9\.]+/g, ""))
+      basketTotal.innerHTML = totalPrice;
    }
 }
 
