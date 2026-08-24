@@ -152,6 +152,10 @@ h2 {
    color: #BBBBBB;
 }
 
+.remove-btn:hover {
+   color: #ff8a8a;
+}
+
 #total {
    width: 508px;
    display: flex;
