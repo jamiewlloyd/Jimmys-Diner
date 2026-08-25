@@ -5,6 +5,8 @@ const basket = document.getElementById('basket');
 const basketTotal = document.getElementById('basket-total');
 const modalContainer = document.getElementById('modal-container');
 const modal = document.getElementById('modal');
+const thankYouMessage = document.getElementById('message');
+const customerName = document.getElementById('customer-name');
 let totalPrice = Number(basketTotal.innerText);
 
 menuArray.forEach(object => {
@@ -74,7 +76,7 @@ document.addEventListener("click", function (e) {
    } else if (e.target.classList.contains('complete-btn') && (totalPrice !== 0)) {
       modal.classList.remove('hidden');
       modalContainer.classList.remove('hidden');
-      document.body.style.classlist.add('stop-scroll');
+      document.body.style.overflow = "hidden";
    }
 });
 
@@ -122,7 +124,34 @@ function removeBasketItem(parent, price) {
 
 modal.addEventListener("submit", function (e) {
    e.preventDefault();
+   let paymentData = new FormData(modal);
+   let name = paymentData.get('name');
+
+   // Hide Modal
    modal.classList.add('hidden');
    modalContainer.classList.add('hidden');
-   document.body.style.classlist.remove('stop-scroll');
+   document.body.style.overflow = "visible";
+
+   // Clear form
+   modal.reset();
+
+   // Hide Basket | Show Thanks
+   basket.classList.add('hidden');
+   customerName.innerText = name
+   thankYouMessage.classList.remove('hidden');
+
+   // Clear Basket
+   let basketItemArr = Array.from(document.querySelectorAll('.basket-item'));
+   basketItemArr.forEach(function (item) {
+      item.remove();
+   });
+   totalPrice = 0;
+   basketTotal.innerHTML = totalPrice;
+
+   // Show thanks on a timer
+   setTimeout(function () {
+      thankYouMessage.classList.add('hidden');
+      paymentData = []
+      name = ""
+   }, 3000);
 })

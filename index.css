@@ -243,10 +243,24 @@ input[type="reset"] {
    font-size: 20px;
 }
 
-.hidden {
-   display: none;
+.message {
+   width: 504px;
+   height: 120px;
+   background-color: #ECFDF5;
+   font-size: 32px;
+   color: #065F46;
+   inset: 0;
+   margin: 100px auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
 }
 
-.stop-scroll {
-   overflow: hidden;
+#message p {
+   margin-bottom: 5px;
+}
+
+.hidden {
+   display: none;
 }
