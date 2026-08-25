@@ -3,6 +3,8 @@ import { menuArray } from '/data.js';
 const appContainer = document.getElementById("app-container");
 const basket = document.getElementById('basket');
 const basketTotal = document.getElementById('basket-total');
+const modalContainer = document.getElementById('modal-container');
+const modal = document.getElementById('modal');
 let totalPrice = Number(basketTotal.innerText);
 
 menuArray.forEach(object => {
@@ -69,8 +71,13 @@ document.addEventListener("click", function (e) {
       const removeItemParent = e.target.parentElement;
       const removeItemPrice = Number(e.target.nextElementSibling.innerText.replace(/[^0-9\.]+/g, ""));
       removeBasketItem(removeItemParent, removeItemPrice);
+   } else if (e.target.classList.contains('complete-btn') && (totalPrice !== 0)) {
+      modal.classList.remove('hidden');
+      modalContainer.classList.remove('hidden');
+      document.body.style.classlist.add('stop-scroll');
    }
 });
+
 
 function renderBasketItem(name, price) {
    const basketContents = document.getElementById('basket-contents');
@@ -105,10 +112,17 @@ function renderBasketItem(name, price) {
 }
 
 function removeBasketItem(parent, price) {
-   parent.remove()
-   totalPrice -= price
+   parent.remove();
+   totalPrice -= price;
    basketTotal.innerHTML = totalPrice;
    if ((totalPrice === 0) && (!basket.classList.contains('hidden'))) {
       basket.classList.add('hidden');
    }
 }
+
+modal.addEventListener("submit", function (e) {
+   e.preventDefault();
+   modal.classList.add('hidden');
+   modalContainer.classList.add('hidden');
+   document.body.style.classlist.remove('stop-scroll');
+})

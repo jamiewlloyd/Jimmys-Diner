@@ -181,6 +181,15 @@ h2 {
    cursor: pointer;
 }
 
+.modal-container {
+   width: 100vw;
+   height: 100vh;
+   z-index: 100;
+   display: block;
+   position: fixed;
+   inset: 0;
+}
+
 .modal {
    width: 475px;
    height: 500px;
@@ -196,6 +205,7 @@ h2 {
    justify-content: center;
    gap: 25px;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   z-index: 101;
 }
 
 .modal-heading {
@@ -235,4 +245,8 @@ input[type="reset"] {
 
 .hidden {
    display: none;
+}
+
+.stop-scroll {
+   overflow: hidden;
 }
